@@ -16,50 +16,79 @@
 </head>
 
 <body>
-    <!-- Header Part -->
+    <!-------------- Header Part--------- -->
     <header>
-        <h1 class="text-center mt-4">Arithmometer</h1>
+        <h1 class="text-center mt-4" style="color: rgb(100, 149, 237);">Arithmometer</h1>
     </header>
     <main>
-        <section class="mx-5 px-4 my-5">
-            <div class="row">
-                <div class="col-lg-7">
-
-                    <img src="top-view.png" alt="">
-
+        <div class="container overflow-hidden my-5">
+            <div class="row gy-5">
+                <!------------- left side image -------------->
+                <div class="col-lg-6 col-12 col-md-12">
+                    <div>
+                        <img src="top-view.png" alt="">
+                    </div>
                 </div>
-                <div class="col-lg-5">
-                    <div class="text-center right-portion">
-                        <h4 class="text-center">Income</h4>
+
+                <!------------ Right Part ----------->
+                <div class="col-lg-6 col-12 col-md-12">
+                    <div class="right-portion ">
+                        <!------------ Income and expenses part -------->
                         <div>
-                            <p class="label-title">Income: <input class="input-field" type="number"></p>
+                            <p class="text-center fs-4 fw-bold">Income</p>
 
+                            <div class="mb-3 row">
+                                <label for="income" class="col-sm-2 col-form-label fs-6 fw-bold">Income:</label>
+                                <div class="col-sm-10">
+                                    <input type="number" class="form-control">
+                                </div>
+                            </div>
+                            <p class="text-center fs-4 fw-bold">Expenses</p>
+
+                            <div class="mb-3 row">
+                                <label for="income" class="col-sm-2 col-form-label fs-6 fw-bold">Food:</label>
+                                <div class="col-sm-10">
+                                    <input type="number" class="form-control">
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="income" class="col-sm-2 col-form-label fs-6 fw-bold">Clothes:</label>
+                                <div class="col-sm-10">
+                                    <input type="number" class="form-control">
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="income" class="col-sm-2 col-form-label fs-6 fw-bold">Rent:</label>
+                                <div class="col-sm-10">
+                                    <input type="number" class="form-control">
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-center mb-3">
+                                <button class="button-style" type="button" class="btn btn-lg">Calculate</button>
+                            </div>
+                            <p class="text-center fs-5 fw-bold">Total Expenses: <span>00</span></p>
+                            <p class="text-center fs-5 fw-bold">Balance: <span>00</span></p>
                         </div>
-                        <h4 class="text-center">Expenses</h4>
-                        <div class="text-center px-4">
-                            <p class="label-title">Food: <input class="input-field" type="number"></p>
 
-                            <p class="label-title">Rent: <input class="input-field" type="number"></p>
-
-                            <p class="label-title">Clothes: <input class="input-field" type="number"></p>
-
-                            <button class="button" type="button" class="btn btn-lg">Calculate</button>
-
-                            <h5 class="mt-4">Total Expenses: <span>00</span></h5>
-                            <h5>Balance: <span>00</span></h5>
+                        <!-------------- Saving Part ------------->
+                        <div>
+                            <div class="mb-3 row">
+                                <label for="income" class="col-sm-2 col-form-label fs-6 fw-bold">Save:</label>
+                                <div class="col-sm-10">
+                                    <input type="number"> <span class="fs-5 fw-bold">%</span> <button
+                                        class="button-style">Save</button>
+                                </div>
+                                <p class="text-center fs-5 fw-bold mt-4">Saving Amount: <span>00</span></p>
+                                <p class="text-center fs-5 fw-bold">Remaining Balance:<span>00</span></p>
+                            </div>
                         </div>
-                        <div class="mt-4">
-                            <p class="label-title"> Save: <input type="number"> % <button class="button">Save</button>
-                            </p>
-                            <h5 class="mt-4">Saving Amount: <span>00</span></h5>
-                            <h5>Remaining Balance: <span>00</span></h5>
-                        </div>
+
                     </div>
 
                 </div>
-            </div>
 
-        </section>
+            </div>
+        </div>
     </main>
 
     <!-- Javascripts -->

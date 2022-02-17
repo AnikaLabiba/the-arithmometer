@@ -1,11 +1,12 @@
 
 img{
-    width: 648px;
-    height: 655px;
+    width: 516px;
+    height: 695px;
 }
 .right-portion{
     background-color: rgb(240, 236, 236);
     padding: 30px 35px;
+    justify-content: center;
 }
 .label-title{
     font-weight: 600;
@@ -15,12 +16,12 @@ img{
     margin: 5px 20px;
     padding: 0 10px;
 }
-.button{
-    background-color: #1F45FC;
+.button-style{
+    background-color: rgb(100, 149, 237) ;
     border: none;
     border-radius: 8px;
     padding: 10px 25px;
     border-radius: 10px;
-    /* color: white; */
+    color: white;
     font-weight: 700;
 }
