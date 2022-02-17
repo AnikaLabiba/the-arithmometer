@@ -1,4 +1,3 @@
-
 // adding eventlistener on Calculate button
 document.getElementById('calculate-btn').addEventListener('click', function () {
 
@@ -18,6 +17,7 @@ function calculateTotalExpenses() {
         //calculating total expenses
         const expense = parseFloat(foodInput) + parseFloat(clothesInput) + parseFloat(rentInput);
         totalExpenses.innerText = expense;
+        closeErrorAlert()
         return expense;
     }
     else {
@@ -38,7 +38,7 @@ function calculateTotalBalance() {
     //getting expenses value
     const expenseTotal = calculateTotalExpenses();
 
-
+    // cheching if income amount is valid or not
     if (incomeAmount < 0 || typeof (expenseTotal) != 'number') {
         notifyNegativeError();
     }
@@ -46,7 +46,9 @@ function calculateTotalBalance() {
         //calculating total balance
         const balance = parseFloat(incomeAmount) - expenseTotal;
         totalBalance.innerText = balance;
+        closeErrorAlert()
         return balance;
+
     }
 }
 //calculating savings
@@ -60,18 +62,35 @@ function calculateSavings() {
     const savingAmount = document.getElementById('saving-amount');
     const remainingBalance = document.getElementById('remaining-balance');
 
-    const saving = (savingValue / 100) * incomeValue
-    savingAmount.innerText = saving;
+    //cgeking if inputs are positive
+    if (incomeValue > 0 && savingValue > 0) {
+        const saving = (savingValue / 100) * incomeValue
+        savingAmount.innerText = saving;
 
-    const balance = calculateTotalBalance();
-    remainingBalance.innerText = balance - saving;
+        const balance = calculateTotalBalance();
+        remainingBalance.innerText = balance - saving;
+        closeErrorAlert()
+        return saving;
+    }
+    else {
+        notifyNegativeError();
+    }
 }
+
+// Error handling js//------->
 
 // handling negative number as input
 function notifyNegativeError() {
     const notifyNegative = document.getElementById('notify-negative');
     notifyNegative.style.display = 'block';
 }
+//hiding error notification
+function closeErrorAlert() {
+    const notifyNegative = document.getElementById('notify-negative');
+    notifyNegative.style.display = 'none';
+}
+
+
 
 
 

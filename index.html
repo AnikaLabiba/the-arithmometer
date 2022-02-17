@@ -23,7 +23,7 @@
     <main>
 
         <!-- <button type="button" class="btn btn-primary" id="liveAlertBtn">Show live alert</button> -->
-        <div class="container overflow-hidden my-5">
+        <div class="container overflow-hidden my-4">
 
             <div class="row gy-5">
                 <!------------- left side image -------------->
@@ -41,9 +41,9 @@
                             <!-- <div id="liveAlertPlaceholder"></div> -->
                             <div class="mb-3 row">
                                 <div class="notify-section">
-                                    <p id="notify-negative" class="notify"> Sorry, your income or expenses can't be
-                                        negative.
-                                        <button id="dismiss" class="notify-btn">❌</button>
+                                    <p id="notify-negative" class="notify"> Sorry, input value can't be
+                                        negative. Please provide positive number.
+                                        <button onclick="closeErrorAlert()" class="notify-btn">❌</button>
                                     </p>
                                     <p id="notify-success" class="notify"> Pin Matched... Secret door is opening for
                                         you <button class="notify-btn">✅</button></p>
@@ -60,12 +60,9 @@
                             <p class="text-center fs-4 fw-bold">Expenses</p>
 
                             <div class="mb-3 row">
-                                <label for="food-input" class="col-sm-2 col-form-label fs-6 fw-bold">Food:</label>
+                                <label class="col-sm-2 col-form-label fs-6 fw-bold">Food:</label>
                                 <div class="col-sm-10">
-                                    <input id="food-input" type="number" class="form-control" required>
-                                    <div class="invalid-feedback">
-                                        Please provide a valid number.
-                                    </div>
+                                    <input id="food-input" type="number" class="form-control">
                                 </div>
                             </div>
                             <div class="mb-3 row">
@@ -84,8 +81,8 @@
                                 <button id="calculate-btn" class="button-style" type="button"
                                     class="btn btn-lg">Calculate</button>
                             </div>
-                            <p class="text-center fs-5 fw-bold">Total Expenses: <span id="total-expenses">00</span></p>
-                            <p class="text-center fs-5 fw-bold">Balance: <span id="total-balance">00</span></p>
+                            <p class="text-center fs-6 fw-bold">Total Expenses: <span id="total-expenses">00</span></p>
+                            <p class="text-center fs-6 fw-bold">Balance: <span id="total-balance">00</span></p>
                         </div>
 
                         <!-------------- Saving Part ------------->
@@ -96,9 +93,9 @@
                                     <input id="saving-input" type="number"> <span class="fs-5 fw-bold">%</span> <button
                                         onclick="calculateSavings()" class="button-style">Save</button>
                                 </div>
-                                <p class="text-center fs-5 fw-bold mt-4">Saving Amount: <span
+                                <p class="text-center fs-6 fw-bold mt-4">Saving Amount: <span
                                         id="saving-amount">00</span></p>
-                                <p class="text-center fs-5 fw-bold">Remaining Balance: <span
+                                <p class="text-center fs-6 fw-bold">Remaining Balance: <span
                                         id="remaining-balance">00</span></p>
                             </div>
                         </div>
