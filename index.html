@@ -21,7 +21,10 @@
         <h1 class="text-center mt-4" style="color: rgb(100, 149, 237);">Arithmometer</h1>
     </header>
     <main>
+
+        <!-- <button type="button" class="btn btn-primary" id="liveAlertBtn">Show live alert</button> -->
         <div class="container overflow-hidden my-5">
+
             <div class="row gy-5">
                 <!------------- left side image -------------->
                 <div class="col-lg-6 col-12 col-md-12">
@@ -35,6 +38,17 @@
                     <div class="right-portion ">
                         <!------------ Income and expenses part -------->
                         <div>
+                            <!-- <div id="liveAlertPlaceholder"></div> -->
+                            <div class="mb-3 row">
+                                <div class="notify-section">
+                                    <p id="notify-negative" class="notify"> Sorry, your income or expenses can't be
+                                        negative.
+                                        <button id="dismiss" class="notify-btn">❌</button>
+                                    </p>
+                                    <p id="notify-success" class="notify"> Pin Matched... Secret door is opening for
+                                        you <button class="notify-btn">✅</button></p>
+                                </div>
+                            </div>
                             <p class="text-center fs-4 fw-bold">Income</p>
 
                             <div class="mb-3 row">
@@ -46,9 +60,12 @@
                             <p class="text-center fs-4 fw-bold">Expenses</p>
 
                             <div class="mb-3 row">
-                                <label class="col-sm-2 col-form-label fs-6 fw-bold">Food:</label>
+                                <label for="food-input" class="col-sm-2 col-form-label fs-6 fw-bold">Food:</label>
                                 <div class="col-sm-10">
-                                    <input id="food-input" type="number" class="form-control">
+                                    <input id="food-input" type="number" class="form-control" required>
+                                    <div class="invalid-feedback">
+                                        Please provide a valid number.
+                                    </div>
                                 </div>
                             </div>
                             <div class="mb-3 row">

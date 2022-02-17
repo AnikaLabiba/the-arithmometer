@@ -25,3 +25,19 @@ img{
     color: white;
     font-weight: 700;
 }
+
+.notify {
+    color: #fff;
+    text-align: center;
+    margin: 0 auto;
+    background: #686b8d;
+    margin-top: 20px;
+    border-radius: 15px;
+    padding: 10px 8px;
+    display: none;
+}
+.notify-btn{
+    background-color: #5c5e7e;
+    border: none;
+    width: 20px;
+}

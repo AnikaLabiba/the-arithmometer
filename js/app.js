@@ -12,28 +12,42 @@ function calculateTotalExpenses() {
     const rentInput = document.getElementById('rent-input').value;
 
     const totalExpenses = document.getElementById('total-expenses');
+    // const calculateBtn = document.getElementById('calculate-btn');
 
-    //calculating total expenses
-    const expense = parseFloat(foodInput) + parseFloat(clothesInput) + parseFloat(rentInput);
-    totalExpenses.innerText = expense;
-    return expense;
+    if (foodInput > 0 && clothesInput > 0 && rentInput > 0) {
+        //calculating total expenses
+        const expense = parseFloat(foodInput) + parseFloat(clothesInput) + parseFloat(rentInput);
+        totalExpenses.innerText = expense;
+        return expense;
+    }
+    else {
+        notifyNegativeError();
 
+
+    }
 }
 
 //calculating total balance
 function calculateTotalBalance() {
     //getting input fields
     const incomeInput = document.getElementById('income-input').value;
+    const incomeAmount = parseFloat(incomeInput);
     const totalBalance = document.getElementById('total-balance');
 
+    const calculateBtn = document.getElementById('calculate-btn');
     //getting expenses value
     const expenseTotal = calculateTotalExpenses();
 
-    //calculating total balance
-    const balance = parseFloat(incomeInput) - expenseTotal;
-    totalBalance.innerText = balance;
-    return balance;
 
+    if (incomeAmount < 0 || typeof (expenseTotal) != 'number') {
+        notifyNegativeError();
+    }
+    else {
+        //calculating total balance
+        const balance = parseFloat(incomeAmount) - expenseTotal;
+        totalBalance.innerText = balance;
+        return balance;
+    }
 }
 //calculating savings
 function calculateSavings() {
@@ -52,4 +66,12 @@ function calculateSavings() {
     const balance = calculateTotalBalance();
     remainingBalance.innerText = balance - saving;
 }
+
+// handling negative number as input
+function notifyNegativeError() {
+    const notifyNegative = document.getElementById('notify-negative');
+    notifyNegative.style.display = 'block';
+}
+
+
 
