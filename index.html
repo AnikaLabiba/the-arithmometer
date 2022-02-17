@@ -38,65 +38,71 @@
                     <div class="right-portion ">
                         <!------------ Income and expenses part -------->
                         <div>
-                            <!-- <div id="liveAlertPlaceholder"></div> -->
+
                             <div class="mb-3 row">
                                 <div class="notify-section">
-                                    <p id="notify-negative" class="notify"> Sorry, input value can't be
-                                        negative. Please provide positive number.
-                                        <button onclick="closeErrorAlert()" class="notify-btn">❌</button>
+                                    <p id="notify-forPositive" class="notify"> Please some provide positive number.
+                                        <button onclick="closeErrorAlert('forPositive')" class="notify-btn">❌</button>
                                     </p>
-                                    <p id="notify-success" class="notify"> Pin Matched... Secret door is opening for
-                                        you <button class="notify-btn">✅</button></p>
+                                    <p id="notify-insuficiantBalance" class="notify"> Sorry you have insuficiant
+                                        balance.
+                                        <button onclick="closeErrorAlert('insuficiantBalance')"
+                                            class="notify-btn">❌</button>
+                                    </p>
                                 </div>
                             </div>
-                            <p class="text-center fs-4 fw-bold">Income</p>
+                            <div id="form-container">
+                                <p class="text-center fs-4 fw-bold">Income</p>
 
-                            <div class="mb-3 row">
-                                <label for="income" class="col-sm-2 col-form-label fs-6 fw-bold">Income:</label>
-                                <div class="col-sm-10">
-                                    <input id="income-input" type="number" class="form-control">
+                                <div class="mb-3 row">
+                                    <label for="income" class="col-sm-2 col-form-label fs-6 fw-bold">Income:</label>
+                                    <div class="col-sm-10">
+                                        <input id="income-input" type="number" class="form-control">
+                                    </div>
                                 </div>
-                            </div>
-                            <p class="text-center fs-4 fw-bold">Expenses</p>
+                                <p class="text-center fs-4 fw-bold">Expenses</p>
 
-                            <div class="mb-3 row">
-                                <label class="col-sm-2 col-form-label fs-6 fw-bold">Food:</label>
-                                <div class="col-sm-10">
-                                    <input id="food-input" type="number" class="form-control">
+                                <div class="mb-3 row">
+                                    <label class="col-sm-2 col-form-label fs-6 fw-bold">Food:</label>
+                                    <div class="col-sm-10">
+                                        <input id="food-input" type="number" class="form-control">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="mb-3 row">
-                                <label class="col-sm-2 col-form-label fs-6 fw-bold">Clothes:</label>
-                                <div class="col-sm-10">
-                                    <input id="clothes-input" type="number" class="form-control">
+                                <div class="mb-3 row">
+                                    <label class="col-sm-2 col-form-label fs-6 fw-bold">Clothes:</label>
+                                    <div class="col-sm-10">
+                                        <input id="clothes-input" type="number" class="form-control">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="mb-3 row">
-                                <label class="col-sm-2 col-form-label fs-6 fw-bold">Rent:</label>
-                                <div class="col-sm-10">
-                                    <input id="rent-input" type="number" class="form-control">
+                                <div class="mb-3 row">
+                                    <label class="col-sm-2 col-form-label fs-6 fw-bold">Rent:</label>
+                                    <div class="col-sm-10">
+                                        <input id="rent-input" type="number" class="form-control">
+                                    </div>
                                 </div>
+                                <div class="d-flex justify-content-center mb-3">
+                                    <button id="calculate-btn" class="button-style" type="button"
+                                        class="btn btn-lg">Calculate</button>
+                                </div>
+                                <p class="text-center fs-6 fw-bold">Total Expenses: <span id="total-expenses">00</span>
+                                </p>
+                                <p class="text-center fs-6 fw-bold">Balance: <span id="total-balance">00</span></p>
                             </div>
-                            <div class="d-flex justify-content-center mb-3">
-                                <button id="calculate-btn" class="button-style" type="button"
-                                    class="btn btn-lg">Calculate</button>
-                            </div>
-                            <p class="text-center fs-6 fw-bold">Total Expenses: <span id="total-expenses">00</span></p>
-                            <p class="text-center fs-6 fw-bold">Balance: <span id="total-balance">00</span></p>
-                        </div>
 
-                        <!-------------- Saving Part ------------->
-                        <div>
-                            <div class="mb-3 row">
-                                <label class="col-sm-2 col-form-label fs-6 fw-bold">Save:</label>
-                                <div class="col-sm-10">
-                                    <input id="saving-input" type="number"> <span class="fs-5 fw-bold">%</span> <button
-                                        onclick="calculateSavings()" class="button-style">Save</button>
+                            <!-------------- Saving Part ------------->
+                            <div>
+                                <div class="mb-3 row">
+                                    <label class="col-sm-2 col-form-label fs-6 fw-bold">Save:</label>
+                                    <div class="col-sm-10">
+                                        <input id="saving-input" type="number" required> <span
+                                            class="fs-5 fw-bold">%</span>
+                                        <button id="save-btn" class="button-style">Save</button>
+                                    </div>
+                                    <p class="text-center fs-6 fw-bold mt-4">Saving Amount: <span
+                                            id="saving-amount">00</span></p>
+                                    <p class="text-center fs-6 fw-bold">Remaining Balance: <span
+                                            id="remaining-balance">00</span></p>
                                 </div>
-                                <p class="text-center fs-6 fw-bold mt-4">Saving Amount: <span
-                                        id="saving-amount">00</span></p>
-                                <p class="text-center fs-6 fw-bold">Remaining Balance: <span
-                                        id="remaining-balance">00</span></p>
                             </div>
                         </div>
 

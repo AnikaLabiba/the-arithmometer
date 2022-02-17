@@ -1,4 +1,4 @@
-
+/* image style */
 img{
     width: 516px;
     height: 695px;
@@ -26,6 +26,7 @@ img{
     font-weight: 700;
 }
 
+/* Error message style */
 .notify {
     color: #fff;
     text-align: center;
