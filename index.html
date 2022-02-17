@@ -74,13 +74,15 @@
                         <!-------------- Saving Part ------------->
                         <div>
                             <div class="mb-3 row">
-                                <label for="income" class="col-sm-2 col-form-label fs-6 fw-bold">Save:</label>
+                                <label class="col-sm-2 col-form-label fs-6 fw-bold">Save:</label>
                                 <div class="col-sm-10">
-                                    <input type="number"> <span class="fs-5 fw-bold">%</span> <button
-                                        class="button-style">Save</button>
+                                    <input id="saving-input" type="number"> <span class="fs-5 fw-bold">%</span> <button
+                                        onclick="calculateSavings()" class="button-style">Save</button>
                                 </div>
-                                <p class="text-center fs-5 fw-bold mt-4">Saving Amount: <span>00</span></p>
-                                <p class="text-center fs-5 fw-bold">Remaining Balance:<span>00</span></p>
+                                <p class="text-center fs-5 fw-bold mt-4">Saving Amount: <span
+                                        id="saving-amount">00</span></p>
+                                <p class="text-center fs-5 fw-bold">Remaining Balance: <span
+                                        id="remaining-balance">00</span></p>
                             </div>
                         </div>
 
