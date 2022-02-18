@@ -49,6 +49,50 @@ function calculateTotalBalance() {
     }
 }
 
+//eventListener on save button
+document.getElementById('save-btn').addEventListener('click', function () {
+    calculateSavings();
+    calculateRemainingBalance();
+})
+
+//calculating savings
+function calculateSavings() {
+    //getting income value
+    const incomeInput = document.getElementById('income-input').value;
+    const incomeValue = parseFloat(incomeInput);
+    //getting  saving input and remainging balance 
+    const savingInput = document.getElementById('saving-input').value;
+    const savingValue = parseFloat(savingInput);
+    const savingAmount = document.getElementById('saving-amount');
+
+    if (savingValue > 0 && incomeValue > 0) {
+        const saving = (savingValue / 100) * incomeValue;
+        savingAmount.innerText = saving;
+        closeErrorAlert('forPositive');
+        return saving;
+    }
+    else {
+        notifyErrorAlert('forPositive');
+    }
+}
+
+//calculating remainging balance
+function calculateRemainingBalance() {
+    const remainingBalanceField = document.getElementById('remaining-balance');
+    const saving = calculateSavings();
+    const balance = calculateTotalBalance();
+
+    if (saving > 0 && balance > 0) {
+        const remainingBalance = balance - saving;
+        remainingBalanceField.innerText = remainingBalance;
+        closeErrorAlert('forPositive');
+        return remainingBalance;
+    }
+    else {
+        notifyErrorAlert('forPositive');
+    }
+}
+
 
 // handling negative number as input
 function notifyErrorAlert(error) {
