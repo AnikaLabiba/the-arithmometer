@@ -26,6 +26,7 @@ img{
     font-weight: 700;
 }
 
+
 /* Error message style */
 .notify {
     color: #fff;
@@ -48,9 +49,13 @@ img{
         width: 100%;
         height: 300px;
     }
+    /* decreasing save button size in mobile */
+    #save-btn{
+        padding: 5px 8px;
+    }
 }
 /* Media query for responsive image  in medium device */
-@media screen and (max-width:769px) {
+@media screen and (max-width:992px) {
      img{
         width: 100%;
         height: 500px;
