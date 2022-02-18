@@ -1,7 +1,17 @@
 // adding eventlistener on Calculate button
 document.getElementById('calculate-btn').addEventListener('click', function () {
-    calculateTotalExpenses();
+    const balanceInput = document.getElementById('income-input').value;
+    const incomeAmount = parseFloat(balanceInput);
+    const expenses = calculateTotalExpenses();
     calculateTotalBalance();
+    if (incomeAmount > 0 && expenses > incomeAmount) {
+        notifyErrorAlert('insuficiantIncome');
+    }
+    else {
+        closeErrorAlert('insuficiantIncome');
+
+    }
+
 })
 
 //calculating expenses
@@ -21,7 +31,7 @@ function calculateTotalExpenses() {
         const expenses = foodValue + clothesvalue + rentValue;
         if (isNaN != (expenses)) {
             totalExpenses.innerText = expenses;
-            closeErrorAlert('forPositive')
+            closeErrorAlert('forPositive');
             return expenses;
         }
     }
@@ -51,8 +61,16 @@ function calculateTotalBalance() {
 
 //eventListener on save button
 document.getElementById('save-btn').addEventListener('click', function () {
-    calculateSavings();
+    const saving = calculateSavings();
+    const balance = calculateTotalBalance();
     calculateRemainingBalance();
+
+    if (saving > 0 && saving > balance) {
+        notifyErrorAlert('insuficiantBalance');
+    }
+    else {
+        closeErrorAlert('insuficiantBalance');
+    }
 })
 
 //calculating savings
@@ -93,13 +111,12 @@ function calculateRemainingBalance() {
     }
 }
 
-
-// handling negative number as input
+// showing error message
 function notifyErrorAlert(error) {
     const errorAlert = document.getElementById('notify-' + error);
     errorAlert.style.display = 'block';
 }
-//hiding error notification
+//hiding error message
 function closeErrorAlert(error) {
     const errorAlert = document.getElementById('notify-' + error);
     errorAlert.style.display = 'none';
